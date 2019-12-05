@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game</title>
+    <style>
+        #canvas {
+            border: 1px solid;
+            width: 850px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas">Bowser anda tidak suport TagCanvas</canvas>
+
+    <script>
+        function aksicanvas() {
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+
+            canvas.width = canvas.scrollWidth;
+            canvas.height = canvas.scrollHeight;
+
+            var cW = canvas.width
+            var cH = canvas.height
+
+            function animasi() {
+                ctx.save();
+                ct.clearRect(0, 0, cW, cH);
+
+                ctx.restore();
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
