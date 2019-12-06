@@ -9,8 +9,8 @@
     <style>
         #canvas {
             border: 1px solid;
-            width: 850px;
-            height: 500px;
+            width: 1310px;
+            height: 675px;
         }
     </style>
 </head>
@@ -19,25 +19,43 @@
     <canvas id="canvas">Bowser anda tidak suport TagCanvas</canvas>
 
     <script>
-        function aksicanvas() {
+        var bg = new Image();
+        bg.src = "img/bg(1).jpg";
+
+        function aksikanvas() {
             var canvas = document.getElementById('canvas');
             var ctx = canvas.getContext('2d');
 
             canvas.width = canvas.scrollWidth;
             canvas.height = canvas.scrollHeight;
 
-            var cW = canvas.width
-            var cH = canvas.height
+            var cW = canvas.width;
+            var cH = canvas.height;
+
+            function Bg() {
+                this.x = 0, this.y = 0;
+                this.render = function () {
+                    ctx.drawImage(bg, this.x--, this.y);
+                    if (this.x == -2619) {
+                        this.x = 0;
+                    }
+                }
+            }
+
+            var back = new Bg();
 
             function animasi() {
                 ctx.save();
-                ct.clearRect(0, 0, cW, cH);
+                ctx.clearRect(0, 0, cW, cH);
+
+                back.render();
 
                 ctx.restore();
             }
-
-
+            var interval = setInterval(animasi, 30);
         }
+
+        window.onload = aksikanvas;
     </script>
 </body>
 
